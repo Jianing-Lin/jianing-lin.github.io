@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+     <head>
+      <title>CATS</title>
+      <link rel="shortcut icon" href="icon.png">
+      <meta charset="UTF-8">
+        <style>
+#cat{
+    position:absolute;
+    color:pink;
+    background-color: #000000;
+    text-shadow:66px -6px 66px white;
+    border:6px solid black;
+    width:600px;
+    left:300px;
+    top:100px;
+    font-size:166px;
+    font-family:Helvetica;
+    text-align:center;
+}
+#a {
+      position: fixed;
+      top: 0px;
+      right: 0px;
+      width: 600px;
+      opacity: 0.6;
+      border-radius: 15px 50px 30px 5px;
+      z-index: 1;
+      transition: height 3s ease-in, opacity 3s ease-in;
+   }
+#b {
+      position: fixed;
+      top: 20px;
+      left: 0px;
+      width: 100px;
+      opacity: 1;
+      border-radius: 20px 20px 20px 20px;
+   }
+video {
+ position: fixed;
+ width: 20vw;
+ top: 9vh;
+ right: 70vw;
+ border-radius: 66px 66px 66px 66px;
+ z-index: 10;
+}
+body {
+    background-color: black;
+}
+#fry-link:link {
+    color: white;
+    text-decoration: none;
+}
+#fry-link:visited {
+    color: gray;
+    text-decoration: none;
+}
+#fry-link:hover {
+    color: red;
+    font-style: italic;
+    text-shadow: 0px 0px 10px pink;
+}
+#fry-link:active {
+    color: blue;
+}
+#a:hover {
+    height: 800px;
+    opacity: 1;
+}
+        </style>
+     </head>
+     <body>
+    <a href="https://www.google.com">
+        <img id="a" class="cat-pics" src="a.png">
+    </a>
+
+    <img id="b" class="cat-pics" src="a.png" style="top:300px; left:0px; width:200px;">
+
+    <div id="cat">
+        Cat eats <br> 
+        <a id="fry-link" href="https://en.wikipedia.org/wiki/French_fries">
+            <span id="highlight">French fries</span>
+        </a>.
+    </div>
+
+    <a href="https://www.youtube.com">
+        <video loop controls id="myvideo" src="cats.mp4" type="video/mp4"></video>
+    </a>
+</body>
+</html>
