@@ -1,2 +1,30 @@
 body {
 }
+#foundtext{
+  position: absolute;
+  top: 120px;
+  left: 40px;
+  width: 45vw;
+  background: white;
+  color: black;
+  padding: 20px;
+  font-size: 18px;
+  line-height: 1.4;
+  z-index: 5;
+}
+
+#img1{
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  width: 45vw;
+  opacity: 0.7;
+}
+
+#img2{
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  width: 25vw;
+  opacity: 0.9;
+}
