@@ -20,6 +20,7 @@ body {
   right: 0px;
   width: 45vw;
   opacity: 0.7;
+  cursor: zoom-in;
 }
 
 #img2{
@@ -28,4 +29,8 @@ body {
   left: 0px;
   width: 25vw;
   opacity: 0.9;
+}
+
+#cat{
+  cursor: pointer;
 }
