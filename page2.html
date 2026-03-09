@@ -4,211 +4,65 @@
     <meta charset="UTF-8">
     <title>Page 2</title>
     <link rel="shortcut icon" href="icon.png">
-
+    <link rel="stylesheet" href="css/style.css">
     <style>
-body{
-    background-color:black;
-    color:white;
-    white-space:pre;
-    font-family:Helvetica, Arial, sans-serif;
-    overflow-x:hidden;
-    cursor:cell;
-}
-
-/* 链接依然用你那套风格（统一） */
-a:link{ color:#ffd6eb; text-decoration:none; }
-a:visited{ color:#c3a0b6; text-decoration:none; }
-a:hover{ color:yellow; font-style:italic; letter-spacing:2px; text-shadow: 0px 0px 10px pink; }
-a:active{ color:cyan; }
-
-/* 背景大段文字（低透明度） */
-#bgtext2{
-    position: fixed;
-    left: 0px;
-    top: 0px;
-    width: 100vw;
-    height: 100vh;
-    padding: 70px 90px 70px 90px;
-    color: white;
-    opacity: 0.18;
-    font-size: 22px;
-    line-height: 1.6;
-    letter-spacing: 1px;
-    z-index: 0;
-    pointer-events: none;
-}
-
-#bgtext2 span{
-    color:pink;
-    opacity:0.95;
-}
-
-/* 你原来的 foundtext：保留但让它更像“浮在背景上的一块” */
-#foundtext{
-    position:absolute;
-    top:120px;
-    left:90px;
-    width:560px;
-    color:pink;
-    background-color:#000000;
-    text-shadow:20px 0px 30px white;
-    border:4px solid white;
-    padding:22px;
-    font-size:30px;
-    line-height:1.35;
-    z-index:6;
-    opacity:0.92;
-}
-
-/* 图片布局（保留那种 collage 感） */
-#img1{
-    position:fixed;
-    top:40px;
-    right:70px;
-    width:360px;
-    border-radius:40px 10px 50px 8px;
-    opacity:0.82;
-    z-index:2;
-    transition:transform 2s ease, opacity 2s ease, filter 2s ease;
-}
-
-#img2{
-    position:absolute;
-    top:650px;
-    left:90px;
-    width:300px;
-    border-radius:50%;
-    opacity:0.95;
-    z-index:7;
-    transition:transform 2s ease, opacity 2s ease, filter 2s ease;
-}
-
-#img1:hover{
-    transform:scale(1.08);
-    opacity:1;
-    filter:contrast(1.15) saturate(1.25);
-}
-
-#img2:hover{
-    transform:rotate(-10deg) scale(1.06);
-    opacity:0.85;
-    filter:contrast(1.1);
-}
-
-/* 返回主页：不要明显写“back home”，我让它附着在右上角图——点右上角图就回主页 */
-#homehint{
-    position:fixed;
-    top:18px;
-    left:18px;
-    color:pink;
-    font-size:18px;
-    opacity:0.45;
-    z-index:20;
-    pointer-events:none;
-}
-
-/* 响应式 */
-@media (max-width: 900px){
-    #bgtext2{
-        padding: 30px 18px 30px 18px;
-        font-size: 16px;
+      /* ✅新增：第二页也加一层透明背景文字，不破坏你现有 CSS */
+      #bgtext2{
+        position: fixed;
+        left: 40px;
+        top: 60px;
+        width: calc(100vw - 80px);
+        height: calc(100vh - 100px);
+        color: white;
+        opacity: 0.16;
+        font-family: Helvetica, Arial, sans-serif;
+        font-size: 18px;
         line-height: 1.7;
-    }
-
-    #foundtext{
-        width:72vw;
-        left:8vw;
-        top:130px;
-        font-size:22px;
-    }
-
-    #img1{
-        position:absolute;
-        width:42vw;
-        right:8vw;
-        top:520px;
-    }
-
-    #img2{
-        width:38vw;
-        left:10vw;
-        top:920px;
-    }
-
-    body{
-        min-height:1700px;
-    }
-}
+        letter-spacing: 0.6px;
+        z-index: 0;
+        pointer-events: none;
+      }
     </style>
   </head>
 
   <body>
+    <a href="index.html">← back home</a>
 
+    <!-- ✅新增：背景文字（满屏、透明、当纹理） -->
     <div id="bgtext2">
-Cats are detail.
-Cats are repetition.
-Cats are small changes you notice only after living with them for a while.
+Cats teach a kind of quiet attention.
+Not big attention—small attention.
 
-My cat does not behave like a “character”.
-It behaves like a real animal with moods.
-Some mornings it is gentle.
-Some afternoons it acts like it has endless energy.
-At night it becomes quiet, like the whole room is a little darker because it decided so.
+A cat sitting near the window.
+A cat sleeping in impossible positions.
+A cat staring at something you cannot see.
+A cat suddenly running like the floor is lava.
 
-A cat chooses where to place its body.
-It chooses distance.
-It chooses timing.
-It chooses attention.
-That is why living with a cat feels like sharing space with someone who has their own rules.
-
-Sometimes my cat follows me.
+Living with a cat means accepting its rules:
+it chooses distance, timing, and mood.
+Sometimes it follows me from room to room.
 Sometimes it ignores me completely.
 Sometimes it sits in the doorway like a soft checkpoint.
-Sometimes it sleeps so deeply it looks unreal.
-Sometimes it wakes up and stares like it has seen something from another world.
 
-When my cat looks at me, it is not asking for a story.
-It is asking for a moment:
-food,
-warmth,
-play,
-or simply being seen.
+Cats are everywhere online,
+but a personal cat page feels different:
+it’s not “cat content,”
+it’s one relationship repeated over time.
 
-If you stay long enough, cats teach you a kind of observation.
-Not big observations.
-Small ones.
-A paw moving slowly.
-A whisker twitch.
-A breath that changes when it hears something outside.
-
-<span>This page is still just about one cat.</span>
-    </div>
-
-    <div id="homehint">
-      (click the top-right image to go back)
+This second page is closer—less poster, more presence.
     </div>
 
     <div id="foundtext">
-Cats are small, agile carnivorous mammals known for their sharp senses and independent yet affectionate nature.
-
-But my cat is not “a cat in general”.
-It is a specific one.
-A specific face.
-A specific mood.
-A specific rhythm of daily life.
-
-I keep photos because a cat changes all the time,
-even when it looks like nothing is happening.
+      Cats are small, agile carnivorous mammals known for their sharp senses and independent yet affectionate nature, having lived as both skilled hunters and beloved companions alongside humans for thousands of years.
     </div>
 
-    <!-- 右上角图：附着“返回首页”的内链（隐蔽一点） -->
-    <a href="index.html">
-      <img id="img1" src="images/c.png" alt="cat image on page two">
+    <!-- ✅改：链接附着在图片上（不再堆一堆 link 在下面） -->
+    <a href="https://en.wikipedia.org/wiki/Cat" target="_blank">
+      <img id="img1" src="images/c.png" alt="cat image (links to cat wikipedia)">
     </a>
 
-    <!-- 左下角圆图：附着外链（猫叫/呼噜/whatever） -->
-    <a href="https://www.youtube.com/results?search_query=cat+purring+asmr" target="_blank">
-      <img id="img2" src="images/d.png" alt="second cat image on page two">
+    <a href="https://www.youtube.com/results?search_query=cat+purring" target="_blank">
+      <img id="img2" src="images/d.png" alt="cat image (links to purring videos)">
     </a>
 
     <script src="js/script.js"></script>
