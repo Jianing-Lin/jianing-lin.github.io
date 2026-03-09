@@ -4,65 +4,203 @@
     <meta charset="UTF-8">
     <title>Page 2</title>
     <link rel="shortcut icon" href="icon.png">
-    <link rel="stylesheet" href="css/style.css">
+
     <style>
-      /* ✅新增：第二页也加一层透明背景文字，不破坏你现有 CSS */
-      #bgtext2{
-        position: fixed;
-        left: 40px;
-        top: 60px;
-        width: calc(100vw - 80px);
-        height: calc(100vh - 100px);
-        color: white;
-        opacity: 0.16;
-        font-family: Helvetica, Arial, sans-serif;
-        font-size: 18px;
+body{
+    background-color:black;
+    color:white;
+    white-space:pre;
+    font-family:Helvetica, Arial, sans-serif;
+    overflow-x:hidden;
+    cursor:cell;
+}
+
+a:link{
+    color:#ffd6eb;
+    text-decoration:none;
+}
+a:visited{
+    color:#c3a0b6;
+    text-decoration:none;
+}
+a:hover{
+    color:yellow;
+    font-style:italic;
+    letter-spacing:2px;
+    text-shadow: 0px 0px 10px pink;
+}
+a:active{
+    color:cyan;
+}
+
+/* 背景大段文字（低透明度） */
+#bgtext2{
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100vw;
+    height: 100vh;
+    padding: 70px 90px 70px 90px;
+    color: white;
+    opacity: 0.18;
+    font-size: 22px;
+    line-height: 1.6;
+    letter-spacing: 1px;
+    z-index: 0;
+    pointer-events: none;
+}
+
+#bgtext2 span{
+    color:pink;
+    opacity:0.95;
+}
+
+/* 浮在背景上的文字块 */
+#foundtext{
+    position:absolute;
+    top:120px;
+    left:90px;
+    width:560px;
+    color:pink;
+    background-color:#000000;
+    text-shadow:20px 0px 30px white;
+    border:4px solid white;
+    padding:22px;
+    font-size:30px;
+    line-height:1.35;
+    z-index:6;
+    opacity:0.92;
+}
+
+/* ✅椭圆/不对称圆角的那张图（你要的） */
+#img1{
+    position:fixed;
+    top:40px;
+    right:70px;
+    width:360px;
+    border-radius:40px 10px 50px 8px;
+    opacity:0.82;
+    z-index:2;
+    transition:transform 2s ease, opacity 2s ease, filter 2s ease;
+}
+
+#img2{
+    position:absolute;
+    top:650px;
+    left:90px;
+    width:300px;
+    border-radius:50%;
+    opacity:0.95;
+    z-index:7;
+    transition:transform 2s ease, opacity 2s ease, filter 2s ease;
+}
+
+#img1:hover{
+    transform:scale(1.08);
+    opacity:1;
+    filter:contrast(1.15) saturate(1.25);
+}
+
+#img2:hover{
+    transform:rotate(-10deg) scale(1.06);
+    opacity:0.85;
+    filter:contrast(1.1);
+}
+
+/* 返回主页做得不明显：点右上图回主页（下面这个只是淡淡提示，不抢画面） */
+#homehint{
+    position:fixed;
+    top:18px;
+    left:18px;
+    color:pink;
+    font-size:18px;
+    opacity:0.45;
+    z-index:20;
+    pointer-events:none;
+}
+
+@media (max-width: 900px){
+    #bgtext2{
+        padding: 30px 18px 30px 18px;
+        font-size: 16px;
         line-height: 1.7;
-        letter-spacing: 0.6px;
-        z-index: 0;
-        pointer-events: none;
-      }
+    }
+
+    #foundtext{
+        width:72vw;
+        left:8vw;
+        top:130px;
+        font-size:22px;
+    }
+
+    #img1{
+        position:absolute;
+        width:42vw;
+        right:8vw;
+        top:520px;
+    }
+
+    #img2{
+        width:38vw;
+        left:10vw;
+        top:920px;
+    }
+
+    body{
+        min-height:1700px;
+    }
+}
     </style>
   </head>
 
   <body>
-    <a href="index.html">← back home</a>
 
-    <!-- ✅新增：背景文字（满屏、透明、当纹理） -->
     <div id="bgtext2">
-Cats teach a kind of quiet attention.
-Not big attention—small attention.
+Cats are detail.
+Cats are repetition.
+Cats are small changes you notice only after living with them for a while.
 
-A cat sitting near the window.
-A cat sleeping in impossible positions.
-A cat staring at something you cannot see.
-A cat suddenly running like the floor is lava.
+My cat does not behave like a “character”.
+It behaves like a real animal with moods.
+Some mornings it is gentle.
+Some afternoons it acts like it has endless energy.
+At night it becomes quiet, like the whole room is a little darker because it decided so.
 
-Living with a cat means accepting its rules:
-it chooses distance, timing, and mood.
-Sometimes it follows me from room to room.
+A cat chooses where to place its body.
+It chooses distance.
+It chooses timing.
+It chooses attention.
+
+Sometimes my cat follows me.
 Sometimes it ignores me completely.
 Sometimes it sits in the doorway like a soft checkpoint.
+Sometimes it sleeps so deeply it looks unreal.
 
-Cats are everywhere online,
-but a personal cat page feels different:
-it’s not “cat content,”
-it’s one relationship repeated over time.
+This page is still just about one cat.
+    </div>
 
-This second page is closer—less poster, more presence.
+    <div id="homehint">
+      (click the top-right image to go back)
     </div>
 
     <div id="foundtext">
-      Cats are small, agile carnivorous mammals known for their sharp senses and independent yet affectionate nature, having lived as both skilled hunters and beloved companions alongside humans for thousands of years.
+Cats are small, agile carnivorous mammals known for their sharp senses and independent yet affectionate nature.
+
+But my cat is not “a cat in general”.
+It is a specific one.
+A specific face.
+A specific mood.
+A specific rhythm of daily life.
     </div>
 
-    <!-- ✅改：链接附着在图片上（不再堆一堆 link 在下面） -->
-    <a href="https://en.wikipedia.org/wiki/Cat" target="_blank">
-      <img id="img1" src="images/c.png" alt="cat image (links to cat wikipedia)">
+    <!-- 右上椭圆图：回首页（内链） -->
+    <a href="index.html">
+      <img id="img1" src="images/c.png" alt="cat image on page two (click returns home)">
     </a>
 
-    <a href="https://www.youtube.com/results?search_query=cat+purring" target="_blank">
-      <img id="img2" src="images/d.png" alt="cat image (links to purring videos)">
+    <!-- 圆图：外链（猫呼噜） -->
+    <a href="https://www.youtube.com/results?search_query=cat+purring+asmr" target="_blank">
+      <img id="img2" src="images/d.png" alt="second cat image on page two (links to purring videos)">
     </a>
 
     <script src="js/script.js"></script>
