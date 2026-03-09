@@ -6,7 +6,7 @@
     <link rel="shortcut icon" href="icon.png">
     <link rel="stylesheet" href="css/style.css">
     <style>
-      /* ✅新增：第二页也加满屏透明背景文字（不破坏你现有 CSS） */
+      /* ✅新增：第二页也加一层透明背景文字，不破坏你现有 CSS */
       #bgtext2{
         position: fixed;
         left: 40px;
@@ -22,31 +22,13 @@
         z-index: 0;
         pointer-events: none;
       }
-
-      /* ✅新增：Tutorial E 方块，第二页也体现 */
-      #bottomright2{
-        position: fixed;
-        background-color: blue;
-        width: 9vw;
-        height: 9vh;
-        bottom: 3vh;
-        right: 3vw;
-        z-index: 10000;
-        display: none;
-        opacity: 0.6;
-        border-radius: 12px;
-      }
-
-      @media (max-width: 600px){
-        #bottomright2{ display: inline; }
-        #bgtext2{ font-size: 16px; opacity: 0.18; }
-      }
     </style>
   </head>
 
   <body>
     <a href="index.html">← back home</a>
 
+    <!-- ✅新增：背景文字（满屏、透明、当纹理） -->
     <div id="bgtext2">
 Cats teach a kind of quiet attention.
 Not big attention—small attention.
@@ -67,25 +49,21 @@ but a personal cat page feels different:
 it’s not “cat content,”
 it’s one relationship repeated over time.
 
-(Click the text. Click the images.)
+This second page is closer—less poster, more presence.
     </div>
 
     <div id="foundtext">
       Cats are small, agile carnivorous mammals known for their sharp senses and independent yet affectionate nature, having lived as both skilled hunters and beloved companions alongside humans for thousands of years.
     </div>
 
-    <!-- ✅链接附着在图片上：img1 去百科 -->
+    <!-- ✅改：链接附着在图片上（不再堆一堆 link 在下面） -->
     <a href="https://en.wikipedia.org/wiki/Cat" target="_blank">
-      <img id="img1" src="images/c.png" alt="cat photo (links to wikipedia)">
+      <img id="img1" src="images/c.png" alt="cat image (links to cat wikipedia)">
     </a>
 
-    <!-- ✅链接附着在图片上：img2 去猫呼噜视频 -->
     <a href="https://www.youtube.com/results?search_query=cat+purring" target="_blank">
-      <img id="img2" src="images/d.png" alt="cat photo (links to purring videos)">
+      <img id="img2" src="images/d.png" alt="cat image (links to purring videos)">
     </a>
-
-    <!-- ✅Tutorial E 方块（手机显示） -->
-    <div id="bottomright2"></div>
 
     <script src="js/script.js"></script>
   </body>
