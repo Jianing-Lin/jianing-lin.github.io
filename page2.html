@@ -15,31 +15,35 @@ body{
     cursor:cell;
 }
 
-a:link{
-    color:#ffd6eb;
-    text-decoration:none;
-}
-a:visited{
-    color:#c3a0b6;
-    text-decoration:none;
-}
-a:hover{
-    color:yellow;
-    font-style:italic;
-    letter-spacing:2px;
-}
-a:active{
-    color:cyan;
+/* 链接依然用你那套风格（统一） */
+a:link{ color:#ffd6eb; text-decoration:none; }
+a:visited{ color:#c3a0b6; text-decoration:none; }
+a:hover{ color:yellow; font-style:italic; letter-spacing:2px; text-shadow: 0px 0px 10px pink; }
+a:active{ color:cyan; }
+
+/* 背景大段文字（低透明度） */
+#bgtext2{
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100vw;
+    height: 100vh;
+    padding: 70px 90px 70px 90px;
+    color: white;
+    opacity: 0.18;
+    font-size: 22px;
+    line-height: 1.6;
+    letter-spacing: 1px;
+    z-index: 0;
+    pointer-events: none;
 }
 
-#back{
-    position:fixed;
-    top:20px;
-    left:20px;
-    font-size:28px;
-    z-index:20;
+#bgtext2 span{
+    color:pink;
+    opacity:0.95;
 }
 
+/* 你原来的 foundtext：保留但让它更像“浮在背景上的一块” */
 #foundtext{
     position:absolute;
     top:120px;
@@ -53,8 +57,10 @@ a:active{
     font-size:30px;
     line-height:1.35;
     z-index:6;
+    opacity:0.92;
 }
 
+/* 图片布局（保留那种 collage 感） */
 #img1{
     position:fixed;
     top:40px;
@@ -74,7 +80,7 @@ a:active{
     border-radius:50%;
     opacity:0.95;
     z-index:7;
-    transition:transform 2s ease, opacity 2s ease;
+    transition:transform 2s ease, opacity 2s ease, filter 2s ease;
 }
 
 #img1:hover{
@@ -86,58 +92,27 @@ a:active{
 #img2:hover{
     transform:rotate(-10deg) scale(1.06);
     opacity:0.85;
+    filter:contrast(1.1);
 }
 
-#text2{
-    position:absolute;
-    top:620px;
-    right:90px;
-    width:470px;
-    color:white;
-    font-size:22px;
-    line-height:1.55;
-    z-index:8;
+/* 返回主页：不要明显写“back home”，我让它附着在右上角图——点右上角图就回主页 */
+#homehint{
+    position:fixed;
+    top:18px;
+    left:18px;
+    color:pink;
+    font-size:18px;
+    opacity:0.45;
+    z-index:20;
+    pointer-events:none;
 }
 
-#links2{
-    position:absolute;
-    top:1020px;
-    left:100px;
-    width:760px;
-    color:#ffb6d9;
-    font-size:26px;
-    line-height:1.8;
-    z-index:8;
-}
-
-#note2{
-    position:absolute;
-    top:1360px;
-    right:80px;
-    width:480px;
-    color:white;
-    font-size:24px;
-    text-align:right;
-    z-index:9;
-}
-
-#title2{
-    position:absolute;
-    top:40px;
-    left:95px;
-    color:white;
-    font-size:24px;
-    letter-spacing:6px;
-    text-transform:uppercase;
-    z-index:9;
-}
-
+/* 响应式 */
 @media (max-width: 900px){
-    #title2{
-        left:20px;
-        top:70px;
-        font-size:18px;
-        letter-spacing:3px;
+    #bgtext2{
+        padding: 30px 18px 30px 18px;
+        font-size: 16px;
+        line-height: 1.7;
     }
 
     #foundtext{
@@ -160,32 +135,8 @@ a:active{
         top:920px;
     }
 
-    #text2{
-        width:76vw;
-        left:10vw;
-        right:auto;
-        top:1230px;
-        font-size:18px;
-    }
-
-    #links2{
-        width:76vw;
-        left:10vw;
-        top:1700px;
-        font-size:22px;
-    }
-
-    #note2{
-        width:76vw;
-        left:10vw;
-        right:auto;
-        top:2090px;
-        text-align:left;
-        font-size:20px;
-    }
-
     body{
-        min-height:2400px;
+        min-height:1700px;
     }
 }
     </style>
@@ -193,55 +144,72 @@ a:active{
 
   <body>
 
-    <div id="back">
-      <a href="index.html">← back home</a>
+    <div id="bgtext2">
+Cats are detail.
+Cats are repetition.
+Cats are small changes you notice only after living with them for a while.
+
+My cat does not behave like a “character”.
+It behaves like a real animal with moods.
+Some mornings it is gentle.
+Some afternoons it acts like it has endless energy.
+At night it becomes quiet, like the whole room is a little darker because it decided so.
+
+A cat chooses where to place its body.
+It chooses distance.
+It chooses timing.
+It chooses attention.
+That is why living with a cat feels like sharing space with someone who has their own rules.
+
+Sometimes my cat follows me.
+Sometimes it ignores me completely.
+Sometimes it sits in the doorway like a soft checkpoint.
+Sometimes it sleeps so deeply it looks unreal.
+Sometimes it wakes up and stares like it has seen something from another world.
+
+When my cat looks at me, it is not asking for a story.
+It is asking for a moment:
+food,
+warmth,
+play,
+or simply being seen.
+
+If you stay long enough, cats teach you a kind of observation.
+Not big observations.
+Small ones.
+A paw moving slowly.
+A whisker twitch.
+A breath that changes when it hears something outside.
+
+<span>This page is still just about one cat.</span>
     </div>
 
-    <div id="title2">
-      page two / cat notes
+    <div id="homehint">
+      (click the top-right image to go back)
     </div>
 
     <div id="foundtext">
-Cats are small, agile carnivorous mammals known for their sharp senses and independent yet affectionate nature, having lived as both skilled hunters and beloved companions alongside humans for thousands of years.
+Cats are small, agile carnivorous mammals known for their sharp senses and independent yet affectionate nature.
 
-I wanted the second page to feel closer and more personal than the first one.
-The first page is more like an introduction.
-This page is more like staying in the room longer and noticing details.
+But my cat is not “a cat in general”.
+It is a specific one.
+A specific face.
+A specific mood.
+A specific rhythm of daily life.
+
+I keep photos because a cat changes all the time,
+even when it looks like nothing is happening.
     </div>
 
-    <img id="img1" src="images/c.png" alt="cat image on page two">
-    <img id="img2" src="images/d.png" alt="second cat image on page two">
+    <!-- 右上角图：附着“返回首页”的内链（隐蔽一点） -->
+    <a href="index.html">
+      <img id="img1" src="images/c.png" alt="cat image on page two">
+    </a>
 
-    <div id="text2">
-Living with a cat means paying attention to very small actions.
-A cat sitting near the window.
-A cat sleeping in impossible positions.
-A cat staring at something that you cannot see.
-A cat jumping onto the bed exactly when you are trying to work.
-These moments are ordinary, but they build a kind of visual diary.
-
-Cats are everywhere online, but a personal cat website is different from just reposting cat content.
-This page is about one specific relationship between one human and one animal, built through repetition, observation, and daily life.
-That is why I wanted to use both images and text.
-    </div>
-
-    <div id="links2">
-more cat pages:
-
-<a href="https://en.wikipedia.org/wiki/Kitten">kitten / wikipedia</a>
-
-<a href="https://www.youtube.com/results?search_query=cat+sleeping">cat sleeping videos</a>
-
-<a href="https://www.youtube.com/results?search_query=cat+meowing">cat meowing videos</a>
-
-<a href="https://www.aspca.org/pet-care/cat-care">cat care / aspca</a>
-    </div>
-
-    <div id="note2">
-this is the second page of my cat website.
-go back home whenever you want,
-or stay here and keep looking.
-    </div>
+    <!-- 左下角圆图：附着外链（猫叫/呼噜/whatever） -->
+    <a href="https://www.youtube.com/results?search_query=cat+purring+asmr" target="_blank">
+      <img id="img2" src="images/d.png" alt="second cat image on page two">
+    </a>
 
     <script src="js/script.js"></script>
   </body>
